@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌺 Joyeux Anniversaire Katy 🌺</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Dancing+Script:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #e8c46b;
+    --gold-bright: #ffe9a8;
+    --gold-deep: #b8912f;
+    --night: #0d0a1a;
+    --night-2: #16102b;
+    --rose: #f5b8c8;
+    --text: #f3ead8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: radial-gradient(ellipse at 50% -10%, #2a1f4d 0%, var(--night-2) 45%, var(--night) 100%);
+    color: var(--text);
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* ---------- Étoiles animées ---------- */
+  .stars, .stars2, .stars3 {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-repeat: repeat;
+  }
+  .stars  { background-image: radial-gradient(1.5px 1.5px at 20px 30px, var(--gold-bright), transparent), radial-gradient(1px 1px at 130px 80px, #fff, transparent), radial-gradient(1.2px 1.2px at 60px 170px, var(--gold), transparent); background-size: 200px 200px; animation: twinkle 4s ease-in-out infinite; }
+  .stars2 { background-image: radial-gradient(1px 1px at 90px 40px, #fff, transparent), radial-gradient(1.4px 1.4px at 160px 140px, var(--gold-bright), transparent); background-size: 300px 250px; animation: twinkle 6s ease-in-out infinite reverse; }
+  .stars3 { background-image: radial-gradient(0.8px 0.8px at 40px 100px, var(--gold), transparent), radial-gradient(1px 1px at 200px 20px, #fff, transparent); background-size: 150px 180px; animation: twinkle 5s ease-in-out infinite; }
+  @keyframes twinkle { 0%,100% { opacity: .9; } 50% { opacity: .3; } }
+
+  main { position: relative; z-index: 1; }
+
+  section {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 6rem 1.5rem;
+    position: relative;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero { text-align: center; }
+  .crown {
+    font-size: 4.5rem;
+    animation: float 3.5s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(232,196,107,.8));
+  }
+  @keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-14px) } }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 7vw, 5rem);
+    background: linear-gradient(120deg, var(--gold-deep), var(--gold-bright), var(--gold), var(--gold-bright), var(--gold-deep));
+    background-size: 200% auto;
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 5s linear infinite;
+    margin: 1rem 0 .5rem;
+    text-shadow: 0 0 40px rgba(232,196,107,.25);
+  }
+  @keyframes shine { to { background-position: 200% center; } }
+  .hero .name {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(3.4rem, 11vw, 7.5rem);
+    color: var(--rose);
+    text-shadow: 0 0 30px rgba(245,184,200,.55), 0 0 60px rgba(232,196,107,.3);
+    line-height: 1.1;
+  }
+  .hero p.sub {
+    font-size: clamp(1.15rem, 2.6vw, 1.6rem);
+    font-style: italic;
+    color: var(--gold-bright);
+    margin-top: 1.4rem;
+    letter-spacing: .06em;
+  }
+  .scroll-hint {
+    margin-top: 3.5rem; font-size: 1.4rem; color: var(--gold);
+    animation: float 2.2s ease-in-out infinite; opacity: .85;
+  }
+
+  /* ---------- Titres de section ---------- */
+  h2.title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 5vw, 3rem);
+    color: var(--gold-bright);
+    text-align: center;
+    margin-bottom: 2.6rem;
+    position: relative; padding-bottom: .7rem;
+  }
+  h2.title::after {
+    content: "✦ ─── ✦ ─── ✦";
+    position: absolute; left: 50%; transform: translateX(-50%);
+    bottom: -0.4rem; font-size: .8rem; color: var(--gold); letter-spacing: .3em;
+  }
+
+  /* ---------- Poème ---------- */
+  .poem-card {
+    max-width: 720px;
+    background: linear-gradient(160deg, rgba(42,31,77,.75), rgba(13,10,26,.85));
+    border: 1px solid rgba(232,196,107,.45);
+    border-radius: 22px;
+    padding: clamp(1.8rem, 5vw, 3.5rem);
+    box-shadow: 0 0 45px rgba(232,196,107,.14), inset 0 0 60px rgba(232,196,107,.05);
+    backdrop-filter: blur(6px);
+  }
+  .poem-card h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(1.6rem, 4vw, 2.3rem);
+    color: var(--rose);
+    text-align: center; margin-bottom: 1.8rem;
+  }
+  .stanza {
+    font-size: clamp(1.1rem, 2.4vw, 1.35rem);
+    line-height: 1.9;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 1.6rem;
+  }
+  .stanza:last-of-type { margin-bottom: 0; }
+  .signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+    color: var(--gold-bright);
+    text-align: right; margin-top: 2rem;
+  }
+
+  /* ---------- Chanson ---------- */
+  .song-card {
+    max-width: 760px; width: 100%;
+    background: linear-gradient(160deg, rgba(42,31,77,.75), rgba(13,10,26,.85));
+    border: 1px solid rgba(232,196,107,.45);
+    border-radius: 22px; padding: clamp(1.5rem, 4vw, 2.5rem);
+    box-shadow: 0 0 45px rgba(232,196,107,.14);
+    text-align: center;
+  }
+  .song-card .song-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 3.2vw, 1.8rem);
+    color: var(--rose); margin-bottom: .4rem;
+  }
+  .song-card .artist { color: var(--gold); font-style: italic; margin-bottom: 1.5rem; }
+  .video-wrap {
+    position: relative; width: 100%; padding-top: 56.25%;
+    border-radius: 14px; overflow: hidden;
+    border: 1px solid rgba(232,196,107,.35);
+    box-shadow: 0 0 35px rgba(245,184,200,.18);
+  }
+  .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .song-quote {
+    margin-top: 1.6rem; font-style: italic;
+    font-size: clamp(1.05rem, 2.4vw, 1.3rem); color: var(--gold-bright);
+  }
+
+  /* ---------- Souhaits ---------- */
+  .wishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.4rem; max-width: 1000px; width: 100%;
+  }
+  .wish {
+    background: linear-gradient(160deg, rgba(42,31,77,.7), rgba(13,10,26,.8));
+    border: 1px solid rgba(232,196,107,.35);
+    border-radius: 18px;
+    padding: 1.7rem 1.4rem;
+    text-align: center;
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+  .wish:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 12px 40px rgba(232,196,107,.25); }
+  .wish .emoji { font-size: 2.2rem; display: block; margin-bottom: .8rem; }
+  .wish p { font-size: 1.15rem; line-height: 1.6; }
+  .wish p strong { color: var(--gold-bright); }
+
+  /* ---------- Galerie ---------- */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem; max-width: 1000px; width: 100%;
+  }
+  .photo-frame {
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: 16px;
+    border: 2px solid rgba(232,196,107,.55);
+    box-shadow: 0 0 30px rgba(232,196,107,.15);
+    overflow: hidden;
+    transition: transform .4s ease, box-shadow .4s ease;
+  }
+  .photo-frame:hover { transform: scale(1.04) rotate(1deg); box-shadow: 0 10px 45px rgba(232,196,107,.35); }
+  .photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo-frame .placeholder {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: .6rem;
+    background: linear-gradient(160deg, rgba(42,31,77,.8), rgba(13,10,26,.9));
+    color: var(--gold); font-style: italic; font-size: 1.05rem;
+  }
+  .photo-frame .placeholder span:first-child { font-size: 2.4rem; }
+  .gallery-note { margin-top: 2rem; font-style: italic; color: var(--gold); opacity: .85; }
+
+  /* ---------- Message final ---------- */
+  .final-card {
+    max-width: 700px; text-align: center;
+    background: linear-gradient(160deg, rgba(245,184,200,.09), rgba(232,196,107,.07));
+    border: 1px solid rgba(245,184,200,.4);
+    border-radius: 24px;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    box-shadow: 0 0 50px rgba(245,184,200,.15);
+  }
+  .final-card .for {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    color: var(--rose);
+    margin-bottom: 1.2rem;
+  }
+  .final-card p { font-size: clamp(1.1rem, 2.4vw, 1.35rem); line-height: 1.9; font-style: italic; }
+  .final-card .from {
+    margin-top: 1.8rem;
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: var(--gold-bright);
+  }
+
+  /* ---------- Révélation au scroll ---------- */
+  .reveal { opacity: 0; transform: translateY(45px); transition: opacity 1s ease, transform 1s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ---------- Étincelles curseur ---------- */
+  .sparkle {
+    position: fixed; pointer-events: none; z-index: 50;
+    font-size: 14px; animation: sparkleFade 1.1s ease-out forwards;
+  }
+  @keyframes sparkleFade { to { transform: translateY(30px) scale(.2) rotate(120deg); opacity: 0; } }
+
+  footer {
+    text-align: center; padding: 2.5rem 1rem;
+    color: var(--gold); font-style: italic; font-size: 1rem;
+    position: relative; z-index: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+<div class="stars"></div>
+<div class="stars2"></div>
+<div class="stars3"></div>
+
+<main>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="crown">👑</div>
+    <h1>Joyeux Anniversaire</h1>
+    <div class="name">Katy</div>
+    <p class="sub">✨ Ébène royale, éclat incandescent ✨<br>Un coffret magique taillé pour une reine</p>
+    <div class="scroll-hint">▾ découvre ta magie ▾</div>
+  </section>
+
+  <!-- ================= POÈME ================= -->
+  <section id="poeme">
+    <h2 class="title reveal">Un poème pour toi</h2>
+    <div class="poem-card reveal">
+      <h3>🌺 Poème d'anniversaire pour ma sœur de cœur 🌺</h3>
+      <p class="stanza">Ébène royale, éclat incandescent,<br>
+      Ton âme brille comme un soleil ardent,<br>
+      Chaque pas que tu poses est une victoire,<br>
+      Chaque regard que tu donnes est une histoire.</p>
+      <p class="stanza">Tu es la flamme qui ne s'éteint jamais,<br>
+      La force qui défie les tempêtes et les regrets,<br>
+      Ton intelligence est une arme, une lumière,<br>
+      Ton cœur est un sanctuaire, une rivière claire.</p>
+      <p class="stanza">Magnifique étoile, femme invincible,<br>
+      Ton éclat rend le monde plus sensible,<br>
+      Tu es beauté, tu es puissance, tu es vérité,<br>
+      Et tu mérites mille royaumes de félicité.</p>
+      <p class="stanza">Aujourd'hui je crie au ciel ton nom,<br>
+      Je célèbre ta vie, ton feu, ta passion,<br>
+      Que l'univers t'offre enfin ce que tu mérites,<br>
+      Car tu es rare, tu es grande, tu es infinie.</p>
+      <p class="stanza">Joyeux anniversaire, sœur de mon âme,<br>
+      Que ce jour soit une couronne de flammes,<br>
+      Et que demain t'apporte des horizons nouveaux,<br>
+      Car tu es reine, tu es miracle, tu es cadeau.</p>
+      <p class="signature">— Ta sœur de cœur 💖</p>
+    </div>
+  </section>
+
+  <!-- ================= CHANSON ================= -->
+  <section id="chanson">
+    <h2 class="title reveal">Ta chanson</h2>
+    <div class="song-card reveal">
+      <p class="song-title">🎶 « Tu mérites mieux » 🎶</p>
+      <p class="artist">Joé Dwèt Filé</p>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/nfGd1R5uPbM"
+                title="Joé Dwèt Filé - Tu mérites mieux"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+      </div>
+      <p class="song-quote">« Parce que toi, Katy… tu mérites mieux. Tu mérites tout. » ✨</p>
+    </div>
+  </section>
+
+  <!-- ================= SOUHAITS ================= -->
+  <section id="souhaits">
+    <h2 class="title reveal">Mes vœux pour toi</h2>
+    <div class="wishes-grid">
+      <div class="wish reveal"><span class="emoji">👑</span><p>Que tu règnes sur ta vie comme la <strong>reine</strong> que tu es</p></div>
+      <div class="wish reveal"><span class="emoji">💖</span><p>Un amour <strong>véritable</strong>, qui te traite comme tu mérites</p></div>
+      <div class="wish reveal"><span class="emoji">⭐</span><p>Des réussites qui <strong>illuminent</strong> ton chemin</p></div>
+      <div class="wish reveal"><span class="emoji">🕊️</span><p>La <strong>paix</strong> dans ton cœur et la joie dans tes jours</p></div>
+      <div class="wish reveal"><span class="emoji">🌸</span><p>Des horizons <strong>nouveaux</strong> et des portes qui s'ouvrent</p></div>
+      <div class="wish reveal"><span class="emoji">✨</span><p>Que l'univers t'offre <strong>enfin</strong> ce que tu mérites</p></div>
+    </div>
+  </section>
+
+  <!-- ================= GALERIE ================= -->
+  <section id="photos">
+    <h2 class="title reveal">Toi, magnifique</h2>
+    <div class="gallery">
+      <div class="photo-frame reveal"><img src="photos/katy1.jpeg" alt="Katy, magnifique"></div>
+      <div class="photo-frame reveal"><img src="photos/katy2.jpeg" alt="Katy, rayonnante"></div>
+      <div class="photo-frame reveal"><img src="photos/katy3.jpeg" alt="Katy, reine"></div>
+    </div>
+    <p class="gallery-note reveal">✨ Nos souvenirs ensemble, éclats d'éternité ✨</p>
+  </section>
+
+  <!-- ================= MESSAGE FINAL ================= -->
+  <section id="message">
+    <h2 class="title reveal">Un dernier mot</h2>
+    <div class="final-card reveal">
+      <p class="for">Pour toi, Katy…</p>
+      <p>Katy, aujourd'hui le ciel célèbre le miracle de ta naissance.<br>
+      Tu es flamme, tu es lumière, tu es force — et jamais ne laisse personne te faire croire le contraire.<br>
+      Cette année, que tout ce que tu donnes si généreusement te revienne au centuple.<br>
+      Tu mérites mieux. Tu mérites tout. 💛</p>
+      <p class="from">Avec tout mon amour,<br>Ta sœur de cœur 🌺</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>Fait avec ✨ et 💖 — Joyeux anniversaire Katy 🎂</footer>
+
+<script>
+  // Révélation au scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Étincelles dorées qui suivent le curseur
+  const glyphs = ['✨', '⭐', '💫', '🌟'];
+  let last = 0;
+  document.addEventListener('mousemove', (e) => {
+    const now = Date.now();
+    if (now - last < 90) return;
+    last = now;
+    const s = document.createElement('span');
+    s.className = 'sparkle';
+    s.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
+    s.style.left = (e.clientX + (Math.random()*24-12)) + 'px';
+    s.style.top  = (e.clientY + (Math.random()*24-12)) + 'px';
+    document.body.appendChild(s);
+    setTimeout(() => s.remove(), 1100);
+  });
+</script>
+</body>
+</html>
