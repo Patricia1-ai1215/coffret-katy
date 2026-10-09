@@ -247,7 +247,7 @@
   <h2>Un coffret t'attend</h2>
   <div class="for">Katy</div>
   <button class="btn-open" id="openBtn">✨ Ouvrir mon coffret ✨</button>
-  <p class="hint">🔊 Le son s'allume avec le coffret — monte le volume</p>
+  <p class="hint">🔊 Monte le volume</p>
 </div>
 <div class="music-note" id="noteBtn" title="Musique on/off">🎵</div>
 
@@ -308,15 +308,14 @@
     <h2 class="title reveal">« <em>Tu mérites mieux</em> »</h2>
     <div class="glass song-card reveal">
       <div class="eq"><i></i><i></i><i></i><i></i><i></i></div>
-      <p class="song-title">Le clip, <em>pour tes yeux</em> 🎬</p>
       <p class="artist">Joé Dwèt Filé</p>
       <div class="video-wrap">
-        <iframe id="songVideo" data-src="https://www.youtube.com/embed/nfGd1R5uPbM?enablejsapi=1&autoplay=1&loop=1&playlist=nfGd1R5uPbM"
-                src="" title="Joé Dwèt Filé - Tu mérites mieux"
+        <iframe id="songVideo" src="https://www.youtube.com/embed/nfGd1R5uPbM?enablejsapi=1&autoplay=1&loop=1&playlist=nfGd1R5uPbM"
+                title="Joé Dwèt Filé - Tu mérites mieux"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
       </div>
-      <p class="song-quote">« Parce que toi, Katy… tu mérites mieux. Tu mérites tout. » ✨</p>
+      <p class="song-quote">« Toi, Katy… tu mérites mieux. Tu mérites tout. » ✨</p>
     </div>
   </section>
 
@@ -375,8 +374,7 @@
   let musicOn = false;
 
   function startMusic() {
-    if (!video.src) video.src = video.dataset.src;  // autoplay=1 dans l'URL
-    else video.contentWindow.postMessage('{"event":"command","func":"playVideo","args":[]}', '*');
+    video.contentWindow.postMessage('{"event":"command","func":"playVideo","args":[]}', '*');
     musicOn = true;
     noteBtn.classList.add('on');
   }
